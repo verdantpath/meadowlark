@@ -11,9 +11,9 @@ app.engine('handlebars', expressHandlebars({
 }))
 app.set('view engine', 'handlebars')
 
-app.use(express.static(__dirname + '/public'))
-
 const port = process.env.PORT || 3000
+
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', handlers.home)
 

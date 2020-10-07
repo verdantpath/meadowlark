@@ -4,7 +4,8 @@
   "description": "A learning site for Node and Express",
   "main": "meadowlark.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint meadowlark.js lib"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "express-handlebars": "^5.1.0"
   },
   "devDependencies": {
+    "eslint": "^7.10.0",
     "jest": "^26.4.2",
     "portfinder": "^1.0.28",
     "puppeteer": "^5.3.1"
