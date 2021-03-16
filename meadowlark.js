@@ -13,6 +13,7 @@ app.engine('handlebars', expressHandlebars({
 app.set('view engine', 'handlebars')
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 const port = process.env.PORT || 3000
 
@@ -22,6 +23,8 @@ app.get('/', handlers.home)
 
 app.get('/about', handlers.about)
 
+app.get('/newsletter', handlers.newsletter)
+app.post('/newsletter', handlers.api.newsletterSignup)
 app.get('/newsletter-signup', handlers.newsletterSignup)
 app.get('/newsletter-signup/process', handlers.newsletterSignupProcess)
 app.get('/newsletter-signup-thank-you', handlers.newsletterSignupThankYou)
