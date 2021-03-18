@@ -19,7 +19,8 @@
   "homepage": "https://github.com/verdantpath/node-and-express#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "multiparty": "^4.2.2"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
