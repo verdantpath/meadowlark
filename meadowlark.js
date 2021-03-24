@@ -3,6 +3,7 @@ const expressHandlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const multiparty = require('multiparty')
 
+const { credentials } = require('./config')
 const handlers = require('./lib/handlers')
 
 const app = express()
