@@ -2,6 +2,7 @@ const express = require('express')
 const expressHandlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const multiparty = require('multiparty')
+const cookieParser = require('cookie-parser')
 
 const { credentials } = require('./config')
 const handlers = require('./lib/handlers')
@@ -16,6 +17,8 @@ app.set('view engine', 'handlebars')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+app.use(cookieParser(credentials.cookieSecret))
 
 const port = process.env.PORT || 3000
 
