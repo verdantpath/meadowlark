@@ -3,6 +3,7 @@ const expressHandlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const multiparty = require('multiparty')
 const cookieParser = require('cookie-parser')
+const expressSession = require('express-session')
 
 const { credentials } = require('./config')
 const handlers = require('./lib/handlers')
@@ -20,6 +21,11 @@ app.use(bodyParser.json())
 
 app.use(cookieParser(credentials.cookieSecret))
 
+app.use(expressSession({
+  resave: false,
+  saveUninitialized: false,
+  secret: credentials.cookieSecret,
+}))
 const port = process.env.PORT || 3000
 
 app.use(express.static(__dirname + '/public'))
